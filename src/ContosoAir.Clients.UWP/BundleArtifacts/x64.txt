@@ -1,0 +1,2 @@
+MainPackage=D:\RohitProject\Microsoft\contosoair\appcode\contosoair\src\ContosoAir.Clients.UWP\bin\x64\Release\ContosoAir.Clients.UWP_1.1.3.0_x64.appx
+SymbolPackage=D:\RohitProject\Microsoft\contosoair\appcode\contosoair\src\ContosoAir.Clients.UWP\AppPackages\ContosoAir.Clients.UWP_1.1.3.0_Test\ContosoAir.Clients.UWP_1.1.3.0_x64.appxsym
