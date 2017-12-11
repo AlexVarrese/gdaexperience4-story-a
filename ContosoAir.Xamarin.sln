@@ -5,21 +5,9 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoAir.Clients.Core", "src\ContosoAir.Clients\ContosoAir.Clients.Core.csproj", "{23590121-FFD0-4F01-B08E-42CEC68A2A2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoAir.Clients.iOS", "src\ContosoAir.Clients.iOS\ContosoAir.Clients.iOS.csproj", "{44857A51-BE60-4F55-9A23-6D67C55BBEF3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoAir.Clients.UWP", "src\ContosoAir.Clients.UWP\ContosoAir.Clients.UWP.csproj", "{B5E9FC6A-29C7-4C2D-91A0-F91ED5DA4B41}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{34060A56-4CF1-4A2B-B022-5109178D5833}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1BD5734A-6638-4FF5-A29F-A70128CCC426}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoAir.UITests", "src\ContosoAir.UITests\ContosoAir.UITests.csproj", "{43276ED6-2030-4E46-BB74-6A3F229C46F4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoAir.Notifications.Console", "src\ContosoAir.Notifications.Console\ContosoAir.Notifications.Console.csproj", "{F9CD98EC-62D9-4470-BED0-64C7A30971FF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{AE049A43-228C-493A-9787-EDA60B913DA5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoAir.CognitiveSpeech.Xamarin.iOS", "src\ContosoAir.CognitiveSpeech.Xamarin.iOS\ContosoAir.CognitiveSpeech.Xamarin.iOS.csproj", "{1ED560A4-25EE-4C0C-98E2-8D7D69CE9B64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
