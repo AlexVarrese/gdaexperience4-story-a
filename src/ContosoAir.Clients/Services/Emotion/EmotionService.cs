@@ -5,54 +5,85 @@ using System.Linq;
 using System.Threading.Tasks;
 using ContosoAir.Clients.Helpers;
 using Microsoft.ProjectOxford.Emotion;
-
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using System.Reflection;
+using System.Globalization;
+using Newtonsoft.Json;
+using ContosoAir.Clients.Models;
 
 namespace ContosoAir.Clients.Services.Emotion
 {
     public class EmotionService : IEmotionService
     {
-        public async Task<float> GetHappinessAsync(Stream stream)
+        public float floatVal;
+        public static List<FaceAPIResponse> mylist;
+        public double happyness = 0;
+
+        public async Task<float> GetHappinessAsync(Stream streams)
         {
-            float happiness = 0.0f;
+            string contentString;
+            HttpClient client = new HttpClient();
 
-            var emotionClient = new EmotionServiceClient("9d9c35e88d474674a8e8b6f04de75a96");
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Settings.CognitiveServicesKey);
+            string requestParameters = "returnFaceAttributes=emotion";
+            string uri = Settings.FaceAPIEndpointUrl + "?" + requestParameters;
 
-            var emotionResults = await emotionClient.RecognizeAsync(stream);
+            HttpResponseMessage response;
+            BinaryReader binaryReader = new BinaryReader(streams);
+            byte[] byteData = binaryReader.ReadBytes((int)streams.Length);
 
-            if (emotionResults == null || emotionResults.Count() == 0)
+            using (ByteArrayContent content = new ByteArrayContent(byteData))
             {
-                throw new Exception("Can't detect face!");
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                response = await client.PostAsync(uri, content);
+                contentString = await response.Content.ReadAsStringAsync();
             }
 
-            if(emotionResults.Any())
+            mylist = JsonConvert.DeserializeObject<List<FaceAPIResponse>>(contentString);
+
+            foreach (FaceAPIResponse item in mylist)
             {
-                happiness = emotionResults.First().Scores.Happiness;
+                happyness = item.faceAttributes.emotion.happiness;
             }
 
-            return happiness;
+            floatVal = (float)happyness;
+            return floatVal;
         }
 
-        public async Task<float> GetAverageHappinessScoreAsync(Stream stream)
+        public async Task<float> GetAverageHappinessScoreAsync(Stream streams)
         {
-            var emotionClient = new EmotionServiceClient("9d9c35e88d474674a8e8b6f04de75a96");
+            string contentString;
+            HttpClient client = new HttpClient();
 
-            var emotionResults = await emotionClient.RecognizeAsync(stream);
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Settings.CognitiveServicesKey);
+            string requestParameters = "returnFaceAttributes=emotion";
+            string uri = Settings.FaceAPIEndpointUrl + "?" + requestParameters;
 
-            Debug.WriteLine("RohitValue: "+emotionResults);
+            HttpResponseMessage response;
+            BinaryReader binaryReader = new BinaryReader(streams);
+            byte[] byteData = binaryReader.ReadBytes((int)streams.Length);
 
-            if (emotionResults == null || emotionResults.Count() == 0)
+            using (ByteArrayContent content = new ByteArrayContent(byteData))
             {
-                throw new Exception("Can't detect face!");
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                response = await client.PostAsync(uri, content);
+                contentString = await response.Content.ReadAsStringAsync();
             }
 
-            float score = 0.0f;
+            mylist = JsonConvert.DeserializeObject<List<FaceAPIResponse>>(contentString);
 
-            foreach (var emotionResult in emotionResults)
+            foreach (FaceAPIResponse item in mylist)
             {
-                score = score + emotionResult.Scores.Happiness;
+                happyness = item.faceAttributes.emotion.happiness;
             }
 
-            return score / emotionResults.Count();
+            floatVal = (float)happyness;
+            return floatVal;
         }
+
     }
 }

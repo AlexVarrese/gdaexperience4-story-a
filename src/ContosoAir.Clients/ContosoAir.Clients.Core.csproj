@@ -97,6 +97,7 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\Timer.cs" />
     <Compile Include="Models\Deal.cs" />
+    <Compile Include="Models\FaceResponse.cs" />
     <Compile Include="Models\Flight.cs" />
     <Compile Include="Models\FlightAlternatives.cs" />
     <Compile Include="Models\FlightData.cs" />

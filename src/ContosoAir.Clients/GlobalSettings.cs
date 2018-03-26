@@ -12,8 +12,8 @@ namespace ContosoAir.Clients
         public const string FacebookBotAccountAndroid = "fb-messenger://user/";
         public const string FacebookBotAccount = "fb-messenger-public://user-thread/";
         public const string FacebookBotAccountId = "260313431102859";
-        public const string CognitiveServicesKey = "9d9c35e88d474674a8e8b6f04de75a96";//"8475871faed346eda4abc75ae27dd88d"; 
-        public const string BingSpeechApiKey = "d7d3aa6cb8b94e31a2ac7b0cb37834ff";//"e4d4520cc2d1442d89debbbb1d9909e0";
+        public const string CognitiveServicesKey = "6da9d3af982248789ab383bff698dd26";//"9d9c35e88d474674a8e8b6f04de75a96";//"6da9d3af982248789ab383bff698dd26";//"8475871faed346eda4abc75ae27dd88d"; 
+        public const string BingSpeechApiKey = "372131cee1ab4b38b11d42a9ac924db0";//"e4d4520cc2d1442d89debbbb1d9909e0";
         public const string AudioContentType = @"audio/wav; codec=""audio/pcm""; samplerate=16000";
         public const string AudioFilename = "ContosoAir.wav";
         public const int DefaultDelayedTime = 20; // in seconds
@@ -41,7 +41,9 @@ namespace ContosoAir.Clients
         public const string AndroidProjectNumber = "";
         public const string AndroidPackageId = "com.contoso.air";
 
-        public const string GetFlightDetailsUrl = "https://c2crohitlab5poc.azurewebsites.net/api/AzureFunctionForSelectFlightID?code=X2JH6/Xee6IXigA5/CEDi18t5PCykmB0f0n1/DzBj3qnbTCtkSdIeA==";
-        public const string LogicAppUrl = "https://prod-42.westus.logic.azure.com:443/workflows/50e4276e308147979d02473f25dfed97/triggers/request/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Frequest%2Frun&sv=1.0&sig=Xvy65VFlwRCfum2hLRoZwSt3W5Q725Xkm-rHmTP7tJE";
+        public const string GetFlightDetailsUrl = "https://azurefunctionrohit.azurewebsites.net/api/selectFlightData?code=yy5jWad0aH7TdT4vkCTM/4OH3fBg1hEi1A1U/tsqTQqacxvXi1vi0g==";
+        public const string LogicAppUrl = "https://prod-47.westus.logic.azure.com:443/workflows/725d67e23a7a47aeaa23e4aa397fa93b/triggers/request/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Frequest%2Frun&sv=1.0&sig=meaxumdtDyvmec-or6AfT9VizPx-wF_aRm_u7qX-ODE";
+        public const string FaceAPIEndpointUrl = "https://westus.api.cognitive.microsoft.com/face/v1.0/detect";
+
     }
 }

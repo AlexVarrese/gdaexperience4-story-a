@@ -77,6 +77,10 @@ namespace ContosoAir.Clients.Helpers
 
         private const string LogicAppUrlKey = "logicappurl_key";
         private const string DefaultLogicAppUrl = GlobalSettings.LogicAppUrl;
+
+        private const string FaceAPIEndpointUrlKey = "faceapiendpointurl_key";
+        private const string DefaultFaceAPIEndpointUrl = GlobalSettings.FaceAPIEndpointUrl;
+
         #endregion
 
         public static bool AuthSettings
@@ -306,6 +310,18 @@ namespace ContosoAir.Clients.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue<string>(LogicAppUrlKey, value);
+            }
+        }
+
+        public static string FaceAPIEndpointUrl
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<string>(FaceAPIEndpointUrlKey, DefaultFaceAPIEndpointUrl);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue<string>(FaceAPIEndpointUrlKey, value);
             }
         }
 
